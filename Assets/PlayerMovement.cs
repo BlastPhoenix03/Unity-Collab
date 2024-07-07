@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Variables
     private float horizontal;
     [SerializeField] private float Speed;
     [SerializeField] private float JumpForce;
@@ -18,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private CapsuleCollider2D boxCollider2D;
     public float gravityweight;
     public float timer = 0f;
-    
-    //Callin the components
+
     void Start()
     {
        rb = gameObject.GetComponent<Rigidbody2D>();
@@ -27,15 +25,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    //INPUTS
     void Update()
     {
-        //Movement
         horizontal = Input.GetAxisRaw("Horizontal");
         Flip();
 
-        //Jumping
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
@@ -43,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
             
            
         }
-        // If hold jump higher
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
@@ -56,14 +49,10 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-
-   //Assigning rb.velocity in a 2 factor (x,y)
     private void FixedUpdate()
     {
         rb.velocity = new Vector2 (horizontal * Speed, rb.velocity.y);
     }
-
-     //Stare forward
    
     private void Flip()
     {
@@ -75,7 +64,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Deny flappy birb
+    /* Deny flappy birb
+    Huh??? */
     private bool IsGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0, Vector2.down, raycastSize, groundLayer);
@@ -86,10 +76,11 @@ public class PlayerMovement : MonoBehaviour
     private void timerWorker()
     {
         timer++;
-        if ( timer <10)
+        if (timer < 10)
         {
             timer = 0;
         }
     }
    
-}// Hi shadow, if u see this then write comment with "//".
+}// Hi Shadow!
+// Dear Blast, I'm not stupid. I can understand your code without comments. And I also know the syntax of C#. If I ever need explanations on a thing, I'll text you. Until then, don't write obvious comment. There's a meme about this: code: *stop sign*, comment: "this is a stop sign". Understand now what I'm trying to say? Good then. So, don't write obvious comment. Next time, think about it: do you really need to write this comment? Will it rather "pollute" the code?
