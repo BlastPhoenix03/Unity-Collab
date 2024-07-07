@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float Speed;
     [SerializeField] private float JumpForce;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField]private bool facingright;
+    [SerializeField] private bool facingright;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float raycastSize;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
        rb = gameObject.GetComponent<Rigidbody2D>();
-       boxCollider2D = GetComponent<CapsuleCollider2D>();
+       boxCollider2D = gameObject.GetComponent<CapsuleCollider2D>();
         
     }
 
