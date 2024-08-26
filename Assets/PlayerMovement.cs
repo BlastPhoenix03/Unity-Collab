@@ -82,5 +82,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
    
-}// Hi Shadow!
-// Dear Blast, I'm not stupid. I can understand your code without comments. And I also know the syntax of C#. If I ever need explanations on a thing, I'll text you. Until then, don't write obvious comment. There's a meme about this: code: *stop sign*, comment: "this is a stop sign". Understand now what I'm trying to say? Good then. So, don't write obvious comment. Next time, think about it: do you really need to write this comment? Will it rather "pollute" the code?
+}

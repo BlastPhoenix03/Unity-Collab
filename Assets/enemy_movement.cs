@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size, 0, Vector2.down, 0.02, groundLayer);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size, 0, Vector2.down, 0.02f, groundLayer);
         return raycastHit.collider != false;
        
     }
